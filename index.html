@@ -1,77 +1,110 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to SIGNA's World</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SIGNA's World</title>
   <style>
     body {
-      font-family: 'Playfair Display', serif;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: 'Helvetica Neue', sans-serif;
       background: url('https://images.unsplash.com/photo-1523978591478-c753949ff840?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
-      color: #fff;
+      color: white;
     }
 
-    h1, h2, p {
-      font-family: 'Noto Sans JP', sans-serif;
-    }
-
-    .fade-in {
-      opacity: 0;
-      animation: fadeInAnimation 2s ease forwards;
-    }
-
-    @keyframes fadeInAnimation {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .button {
-      display: inline-block;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 10px 20px;
-      background-color: #1DA1F2;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      margin-top: 20px;
-      transition: background-color 0.3s ease;
+      background-color: rgba(0, 0, 0, 0.6);
     }
 
-    .button:hover {
-      background-color: #0d8ddb;
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      text-align: center;
+      margin-top: 100px;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      nav a {
+        padding: 10px 0;
+      }
     }
   </style>
 </head>
-
 <body>
-  <div style="padding: 50px;">
-    <audio controls>
-      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
 
-    <h1 class="fade-in">Welcome to SIGNA's World</h1>
-    <h2 class="fade-in">～真・美・善を求める旅へ～</h2>
-    <p class="fade-in">科学と慈悲を翼として、未来への光を放つ。</p>
-    <p class="fade-in">シグナとあなたの「使命の旅」が、ここから始まります。</p>
+  <header>
+    <h1>SIGNA's World</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="menu">
+      <a href="#chapter1">第一章</a>
+      <a href="#chapter2">第二章</a>
+      <a href="#chapter3">第三章</a>
+    </nav>
+  </header>
 
-    
+  <main>
+    <section id="chapter1">
+      <h2>第一章：真・美・善を描く</h2>
+      <p>ここに世界観系イラストやメッセージを紹介します。</p>
+    </section>
 
-    <br>
-    <a href="https://twitter.com/rpSBaR3ouJ17786" target="_blank" class="button">シグナのXへ</a>
-  </div>
+    <section id="chapter2">
+      <h2>第二章：蓮ちゃんと華ちゃんの物語</h2>
+      <p>キャラクターを通じて物語や感情を描きます。</p>
+    </section>
+
+    <section id="chapter3">
+      <h2>第三章：社会風刺と寓話</h2>
+      <p>深いメッセージ性を含んだ寓話系作品を掲載します。</p>
+    </section>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('open');
+    }
+  </script>
+
 </body>
 </html>
