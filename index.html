@@ -23,13 +23,13 @@
     }
     .button {
       display: inline-block;
-      margin-top: 30px;
-      padding: 12px 24px;
+      margin: 20px 10px;
+      padding: 12px 20px;
       background-color: #1DA1F2;
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
-      font-size: 18px;
+      font-size: 16px;
     }
     .link-button {
       display: block;
@@ -38,9 +38,33 @@
       text-decoration: underline;
       font-size: 16px;
     }
+    .audio-button {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.8);
+      color: #007BFF;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      border: none;
+    }
   </style>
 </head>
 <body>
   <h1 class="fade-in">Welcome to SIGNA's World</h1>
   <h2 class="fade-in">〜真・美・善を求める旅へ〜</h2>
-  <p class="fade-in">科学と慈悲を翼
+  <p class="fade-in">科学と慈悲を翼として、未来への光を放つ。</p>
+  <p class="fade-in">シグナとあなたの「使命の旅」が、ここから始まります。</p>
+
+  <a href="https://twitter.com/rpSBaR3ouJ17786" target="_blank" class="button">シグナのXへ</a>
+  <a href="gallery.html" class="link-button">→ SIGNAイラスト集へ</a>
+
+  <button class="audio-button" onclick="document.getElementById('bg-audio').play()">音を再生</button>
+  <audio id="bg-audio">
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_40b5087b17.mp3" type="audio/mp3">
+    お使いのブラウザでは音声を再生できません。
+  </audio>
+</body>
+</html>
