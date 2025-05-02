@@ -66,5 +66,16 @@
     <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_40b5087b17.mp3" type="audio/mp3">
     お使いのブラウザでは音声を再生できません。
   </audio>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('bg-audio').muted = false;
+  });
+
+  function playAudio() {
+    var audio = document.getElementById('bg-audio');
+    audio.load();
+    audio.play();
+  }
+</script>
 </body>
 </html>
