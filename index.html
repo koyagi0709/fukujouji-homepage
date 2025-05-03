@@ -9,21 +9,21 @@
       margin: 0;
       font-family: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
       text-align: center;
-background: url('bg-signa-wide.png') no-repeat center center fixed;
-
-      
-
-    
+      background: url('bg-signa-wide.png') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
     }
+
     .fade-in {
       opacity: 0;
       animation: fadeInAnimation 2s ease forwards;
     }
+
     @keyframes fadeInAnimation {
       from { opacity: 0; transform: translateY(30px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
     .button {
       display: inline-block;
       margin: 20px 10px;
@@ -34,6 +34,7 @@ background: url('bg-signa-wide.png') no-repeat center center fixed;
       border-radius: 5px;
       font-size: 16px;
     }
+
     .link-button {
       display: block;
       margin-top: 20px;
@@ -41,6 +42,7 @@ background: url('bg-signa-wide.png') no-repeat center center fixed;
       text-decoration: underline;
       font-size: 16px;
     }
+
     .audio-button {
       position: fixed;
       bottom: 20px;
@@ -66,7 +68,8 @@ background: url('bg-signa-wide.png') no-repeat center center fixed;
 
   <button class="audio-button" onclick="playAudio()">音を再生</button>
   <audio id="bg-audio">
-   <source src="birds-singing.mp3" type="audio/mp3">
+    <source src="birds-singing.mp3" type="audio/mp3">
+    お使いのブラウザでは音声を再生できません。
   </audio>
 
   <script>
