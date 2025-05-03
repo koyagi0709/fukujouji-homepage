@@ -63,25 +63,24 @@
 
   <button class="audio-button" onclick="playAudio()">音を再生</button>
   <audio id="bg-audio">
-    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_40b5087b17.mp3" type="audio/mp3">
+    <source src="https://cdn.pixabay.com/audio/2021/10/26/audio_f03ef3d1b7.mp3" type="audio/mp3">
     お使いのブラウザでは音声を再生できません。
   </audio>
 
- <script>
-  function playAudio() {
-    const audio = document.getElementById('bg-audio');
-    audio.muted = false;
-    audio.currentTime = 0;
-
-    audio.play()
-      .then(() => {
-        console.log("音声の再生に成功しました。");
-      })
-      .catch((err) => {
-        console.error("音声の再生に失敗しました:", err);
-        alert("音声が再生できませんでした。\nエラー: " + err.message);
-      });
-  }
-</script>
+  <script>
+    function playAudio() {
+      const audio = document.getElementById('bg-audio');
+      audio.muted = false;
+      audio.currentTime = 0;
+      audio.play()
+        .then(() => {
+          console.log("音声の再生に成功しました。");
+        })
+        .catch((err) => {
+          console.error("音声の再生に失敗しました:", err);
+          alert("音声が再生できませんでした。\nエラー: " + err.message);
+        });
+    }
+  </script>
 </body>
 </html>
