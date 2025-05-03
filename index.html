@@ -67,17 +67,21 @@
     お使いのブラウザでは音声を再生できません。
   </audio>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var audio = document.getElementById('bg-audio');
-      audio.muted = false;
-    });
+ <script>
+  function playAudio() {
+    const audio = document.getElementById('bg-audio');
+    audio.muted = false;
+    audio.currentTime = 0;
 
-    function playAudio() {
-      var audio = document.getElementById('bg-audio');
-      audio.muted = false;
-      audio.play();
-    }
-  </script>
+    audio.play()
+      .then(() => {
+        console.log("音声の再生に成功しました。");
+      })
+      .catch((err) => {
+        console.error("音声の再生に失敗しました:", err);
+        alert("音声が再生できませんでした。\nエラー: " + err.message);
+      });
+  }
+</script>
 </body>
 </html>
